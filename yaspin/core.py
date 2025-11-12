@@ -97,7 +97,7 @@ def to_unicode(text_type: str | bytes, encoding: str = ENCODING) -> str:
 
 @dataclass
 class Spinner:
-    frames: str
+    frames: Sequence[str]
     interval: int
 
 
@@ -803,7 +803,7 @@ class Yaspin:
             uframes = spinner.frames
 
         # TODO (pavdmyt): support any type that implements iterable
-        if isinstance(spinner.frames, list | tuple):
+        if isinstance(spinner.frames, Sequence):
             # Empty ``spinner.frames`` is handled by ``Yaspin._set_spinner``
             if spinner.frames and isinstance(spinner.frames[0], bytes):
                 uframes_seq = [to_unicode(frame) for frame in spinner.frames]
