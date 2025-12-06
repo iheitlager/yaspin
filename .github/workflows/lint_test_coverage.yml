@@ -17,17 +17,17 @@ jobs:
 
     steps:
       - name: checkout-code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: prepare-python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: ${{ matrix.python-version }}
 
       - name: install-poetry
         uses: snok/install-poetry@v1
         with:
-          version: 2.1.4
+          version: 2.2.1
 
       - name: install-dependencies
         run: |
@@ -54,10 +54,10 @@ jobs:
 
     steps:
       - name: checkout-code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: prepare-python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: ${{ matrix.python-version }}
           allow-prereleases: true
@@ -65,7 +65,7 @@ jobs:
       - name: install-poetry
         uses: snok/install-poetry@v1
         with:
-          version: 2.1.4
+          version: 2.2.1
 
       - name: install-dependencies
         run: |
@@ -88,10 +88,10 @@ jobs:
 
     steps:
       - name: checkout-code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: prepare-python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: ${{ matrix.python-version }}
           allow-prereleases: true
@@ -101,7 +101,7 @@ jobs:
         if: "!contains(matrix.python-version, 'pypy-3.11')"
         uses: snok/install-poetry@v1
         with:
-          version: 2.1.4
+          version: 2.2.1
 
       - name: install-dependencies
         if: "!contains(matrix.python-version, 'pypy-3.11')"
