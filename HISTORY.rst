@@ -1,6 +1,14 @@
 Release History
 ===============
 
+3.4.0 / 2025-12-06
+------------------
+
+* Drop Python 3.9 support
+* Fix ``Spinner.frames`` type hint (#261)
+* Update dependencies
+
+
 3.3.0 / 2025-10-11
 ------------------
 
