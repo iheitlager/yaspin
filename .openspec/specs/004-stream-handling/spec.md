@@ -59,7 +59,7 @@ If `warn_on_closed_stream=True`, it MUST emit a `UserWarning` on the **first**
 write attempt to a closed stream and suppress subsequent warnings.
 
 **Implementation**: yaspin/core.py:51 (`SafeStreamWrapper`), yaspin/core.py:59 (`write`),
-yaspin/core.py:72 (`flush`)
+yaspin/core.py:72 (`flush`) — [ADR-0004](../../adr/0004-safe-stream-wrapper.md)
 
 #### Scenario: Write to closed stream (silent)
 - GIVEN `warn_on_closed_stream=False` (default)
@@ -80,7 +80,7 @@ yaspin/core.py:72 (`flush`)
 `SafeStreamWrapper.isatty()` MUST return `False` for closed streams and delegate
 to the underlying stream's `isatty()` otherwise.
 
-**Implementation**: yaspin/core.py:78 (`SafeStreamWrapper.isatty`)
+**Implementation**: yaspin/core.py:78 (`SafeStreamWrapper.isatty`) — [ADR-0004](../../adr/0004-safe-stream-wrapper.md)
 
 #### Scenario: TTY stream
 - GIVEN a real TTY stream

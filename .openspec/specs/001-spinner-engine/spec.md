@@ -30,7 +30,7 @@ in `yaspin/core.py`.
 The `Yaspin` class MUST implement a start/stop lifecycle that spawns a background
 thread for animation and terminates it cleanly on stop.
 
-**Implementation**: yaspin/core.py:340 (`start`), yaspin/core.py:370 (`stop`)
+**Implementation**: yaspin/core.py:340 (`start`), yaspin/core.py:370 (`stop`) — [ADR-0002](../../adr/0002-background-thread-animation.md), [ADR-0003](../../adr/0003-context-manager-and-decorator-dual-use.md)
 
 #### Scenario: Context manager usage
 - GIVEN a caller enters a `with yaspin()` block
@@ -53,7 +53,7 @@ thread for animation and terminates it cleanly on stop.
 The spinner MUST animate in a dedicated `threading.Thread`, cycling through frames
 at the configured interval without blocking the main thread.
 
-**Implementation**: yaspin/core.py:540 (`_spin`), yaspin/core.py:360 (thread creation)
+**Implementation**: yaspin/core.py:540 (`_spin`), yaspin/core.py:360 (thread creation) — [ADR-0002](../../adr/0002-background-thread-animation.md)
 
 #### Scenario: Non-blocking animation
 - GIVEN a spinner is started
@@ -75,7 +75,7 @@ All terminal writes MUST be protected by a `threading.Lock` (`_stream_lock`) to
 prevent interleaving between the spinner thread and the main thread.
 
 **Implementation**: yaspin/core.py:163 (`_stream_lock`), yaspin/core.py:564 (lock in `_spin`),
-yaspin/core.py:477 (lock in `write`)
+yaspin/core.py:477 (lock in `write`) — [ADR-0002](../../adr/0002-background-thread-animation.md)
 
 #### Scenario: Concurrent write
 - GIVEN a spinner is running

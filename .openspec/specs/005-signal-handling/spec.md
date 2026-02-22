@@ -30,7 +30,7 @@ The spinner MUST accept a `sigmap` dict mapping `signal.Signals` to handler call
 or `signal.SIG_DFL`/`signal.SIG_IGN`. Handlers MUST be installed on `start()`.
 
 **Implementation**: yaspin/core.py:195 (`_sigmap`), yaspin/core.py:353 (registration on start),
-yaspin/core.py:660 (`_register_signal_handlers`)
+yaspin/core.py:660 (`_register_signal_handlers`) — [ADR-0006](../../adr/0006-protocol-based-signal-handlers.md)
 
 #### Scenario: Custom SIGTERM handler
 - GIVEN `sigmap={signal.SIGTERM: my_handler}`
@@ -78,7 +78,7 @@ Custom signal handlers provided via `sigmap` that are callable MUST conform to
 `SignalHandlerProtocol`: they MUST accept `(signum: int, frame: Any, spinner: Yaspin)`.
 The spinner instance MUST be injected via `functools.partial` at registration time.
 
-**Implementation**: yaspin/core.py:107 (`SignalHandlerProtocol`), yaspin/core.py:689 (partial injection)
+**Implementation**: yaspin/core.py:107 (`SignalHandlerProtocol`), yaspin/core.py:689 (partial injection) — [ADR-0006](../../adr/0006-protocol-based-signal-handlers.md)
 
 #### Scenario: Protocol-conforming handler
 - GIVEN a handler `def my_handler(signum, frame, spinner):`

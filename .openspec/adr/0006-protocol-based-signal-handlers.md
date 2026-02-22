@@ -45,3 +45,8 @@ Two pre-built handlers (`default_handler`, `fancy_handler`) follow this protocol
 ### Neutral
 - `signal.SIG_DFL` and `signal.SIG_IGN` are valid values in `sigmap` and are passed
   directly to `signal.signal` without wrapping
+
+## Related Specs
+
+- [005-signal-handling](../specs/005-signal-handling/spec.md) — Req 1: Signal Map Registration, Req 4: SignalHandlerProtocol
+- [002-public-api](../specs/002-public-api/spec.md) — Req 2: KeyboardInterrupt-Safe Factory

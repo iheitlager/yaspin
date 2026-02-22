@@ -30,7 +30,7 @@ compatible with the `Spinner` dataclass.
 The package MUST ship `yaspin/data/spinners.json` containing at least 80 named
 spinner definitions, each with `frames` (string or list) and `interval` (int, ms).
 
-**Implementation**: yaspin/data/spinners.json, yaspin/constants.py:13 (SPINNER_ATTRS list)
+**Implementation**: yaspin/data/spinners.json, yaspin/constants.py:13 (SPINNER_ATTRS list) — [ADR-0005](../../adr/0005-spinner-data-as-json.md)
 
 #### Scenario: Access named spinner
 - GIVEN `from yaspin import Spinners`
@@ -46,7 +46,7 @@ spinner definitions, each with `frames` (string or list) and `interval` (int, ms
 `Spinners` MUST be constructed by parsing `spinners.json` with a `object_hook`
 that converts each JSON object to a `namedtuple` using `collections.namedtuple`.
 
-**Implementation**: yaspin/spinners.py:24 (`_hook`), yaspin/spinners.py:28 (`Spinners`)
+**Implementation**: yaspin/spinners.py:24 (`_hook`), yaspin/spinners.py:28 (`Spinners`) — [ADR-0005](../../adr/0005-spinner-data-as-json.md)
 
 #### Scenario: JSON to namedtuple
 - GIVEN `spinners.json` contains `{"dots": {"frames": "⠋...", "interval": 80}}`
@@ -77,7 +77,7 @@ Callers MAY select a built-in spinner by accessing its name as an attribute on a
 `Yaspin` instance. The `__getattr__` implementation MUST lazily import `Spinners`
 and set `self.spinner` to the matching entry.
 
-**Implementation**: yaspin/core.py:230 (`__getattr__`), yaspin/core.py:232 (lazy import)
+**Implementation**: yaspin/core.py:230 (`__getattr__`), yaspin/core.py:232 (lazy import) — [ADR-0001](../../adr/0001-fluent-interface-via-getattr.md)
 
 #### Scenario: Fluent spinner change
 - GIVEN a running `spinner` instance

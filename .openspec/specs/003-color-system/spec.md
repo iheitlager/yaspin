@@ -111,7 +111,7 @@ Whenever `color`, `on_color`, or `attrs` is changed (via property setters or
 `__getattr__` chaining), the `_color_func` MUST be immediately recomposed.
 
 **Implementation**: yaspin/core.py:282 (color setter), yaspin/core.py:290 (on_color setter),
-yaspin/core.py:299 (attrs setter)
+yaspin/core.py:299 (attrs setter) — [ADR-0001](../../adr/0001-fluent-interface-via-getattr.md)
 
 #### Scenario: Dynamic color change
 - GIVEN a running spinner with `color="red"`

@@ -43,3 +43,9 @@ Unrecognized names raise `AttributeError` with a helpful message.
 ### Neutral
 - All legitimate dynamic attributes still route through typed property setters,
   so validation and side effects are preserved
+
+## Related Specs
+
+- [001-spinner-engine](../specs/001-spinner-engine/spec.md) — Req 9: Fluent Interface
+- [003-color-system](../specs/003-color-system/spec.md) — Req 5: Color Function Recomposition (chaining triggers recompose)
+- [006-spinner-collection](../specs/006-spinner-collection/spec.md) — Req 4: Lazy Spinner Selection via `__getattr__`

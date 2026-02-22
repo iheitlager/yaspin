@@ -42,3 +42,8 @@ function argument.
 ### Neutral
 - All three patterns (`with`, `@`, `inject_spinner`) ultimately call `start()`
   and `stop()`, making the lifecycle code a single authority
+
+## Related Specs
+
+- [001-spinner-engine](../specs/001-spinner-engine/spec.md) — Req 1: Lifecycle Management (context manager and decorator entry points)
+- [002-public-api](../specs/002-public-api/spec.md) — Req 1: Primary Factory Function

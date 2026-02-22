@@ -44,3 +44,7 @@ prevent interleaving between the spinner thread and any main-thread writes (via
 ### Neutral
 - The `threading` approach is simpler than `asyncio`; async support is not provided
   but the lock pattern is compatible with async-bridging if added later
+
+## Related Specs
+
+- [001-spinner-engine](../specs/001-spinner-engine/spec.md) — Req 1: Lifecycle Management, Req 2: Background Thread Animation, Req 3: Thread-Safe Stream Writes

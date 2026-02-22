@@ -44,3 +44,7 @@ The list of valid spinner names (`SPINNER_ATTRS`) is maintained separately in
 ### Neutral
 - The `Spinners` object is accessed lazily from `Yaspin.__getattr__` (imported only
   when a spinner name is first resolved), limiting startup impact
+
+## Related Specs
+
+- [006-spinner-collection](../specs/006-spinner-collection/spec.md) — Req 1: Built-in Spinner Library, Req 2: Spinners Object Construction

@@ -40,3 +40,7 @@ All stream I/O is routed through `SafeStreamWrapper`, which:
 
 ### Neutral
 - `SafeStreamWrapper` is internal (not exported); callers always pass a raw `TextIO`
+
+## Related Specs
+
+- [004-stream-handling](../specs/004-stream-handling/spec.md) — Req 3: Closed Stream Resilience, Req 4: TTY Detection

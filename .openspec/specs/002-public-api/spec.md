@@ -27,7 +27,7 @@ The three public factory functions are `yaspin()`, `kbi_safe_yaspin()`, and
 `yaspin(*args, **kwargs)` MUST return a `Yaspin` instance constructed with the
 provided arguments. It MUST be usable as either a context manager or a decorator.
 
-**Implementation**: yaspin/api.py:22 (`yaspin`)
+**Implementation**: yaspin/api.py:22 (`yaspin`) — [ADR-0003](../../adr/0003-context-manager-and-decorator-dual-use.md)
 
 #### Scenario: Context manager
 - GIVEN `with yaspin(text="Working...") as sp:`
@@ -49,7 +49,7 @@ provided arguments. It MUST be usable as either a context manager or a decorator
 MUST pre-register a `default_handler` for `SIGINT` so the spinner shuts down
 cleanly on Ctrl-C.
 
-**Implementation**: yaspin/api.py:121 (`kbi_safe_yaspin`)
+**Implementation**: yaspin/api.py:121 (`kbi_safe_yaspin`) — [ADR-0006](../../adr/0006-protocol-based-signal-handlers.md)
 
 #### Scenario: SIGINT handling
 - GIVEN `with kbi_safe_yaspin() as sp:`
